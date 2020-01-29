@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\TvMaze.Core\TvMaze.Core.csproj" />
+    <ProjectReference Include="..\..\domain\TvMaze.Domain\TvMaze.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

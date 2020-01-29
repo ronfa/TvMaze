@@ -1,0 +1,11 @@
+C:\projects\tvmaze\Core\TvMaze.Core\bin\Debug\netstandard2.0\TvMaze.Core.deps.json
+C:\projects\tvmaze\Core\TvMaze.Core\bin\Debug\netstandard2.0\TvMaze.Core.dll
+C:\projects\tvmaze\Core\TvMaze.Core\bin\Debug\netstandard2.0\TvMaze.Core.pdb
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.csprojAssemblyReference.cache
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.AssemblyInfoInputs.cache
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.AssemblyInfo.cs
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.dll
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.pdb
+C:\projects\tvmaze\Core\TvMaze.Core\bin\Debug\netstandard2.0\TvMaze.Domain.dll
+C:\projects\tvmaze\Core\TvMaze.Core\bin\Debug\netstandard2.0\TvMaze.Domain.pdb
+C:\projects\tvmaze\Core\TvMaze.Core\obj\Debug\netstandard2.0\TvMaze.Core.csproj.CopyComplete

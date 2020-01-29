@@ -1,0 +1,8 @@
+C:\projects\tvmaze\domain\TvMaze.Domain\bin\Debug\netstandard2.0\TvMaze.Domain.deps.json
+C:\projects\tvmaze\domain\TvMaze.Domain\bin\Debug\netstandard2.0\TvMaze.Domain.dll
+C:\projects\tvmaze\domain\TvMaze.Domain\obj\Debug\netstandard2.0\TvMaze.Domain.AssemblyInfoInputs.cache
+C:\projects\tvmaze\domain\TvMaze.Domain\obj\Debug\netstandard2.0\TvMaze.Domain.AssemblyInfo.cs
+C:\projects\tvmaze\domain\TvMaze.Domain\obj\Debug\netstandard2.0\TvMaze.Domain.csprojAssemblyReference.cache
+C:\projects\tvmaze\domain\TvMaze.Domain\bin\Debug\netstandard2.0\TvMaze.Domain.pdb
+C:\projects\tvmaze\domain\TvMaze.Domain\obj\Debug\netstandard2.0\TvMaze.Domain.dll
+C:\projects\tvmaze\domain\TvMaze.Domain\obj\Debug\netstandard2.0\TvMaze.Domain.pdb

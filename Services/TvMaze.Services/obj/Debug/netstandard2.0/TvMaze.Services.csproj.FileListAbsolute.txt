@@ -1,0 +1,13 @@
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Services.deps.json
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Services.dll
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Services.pdb
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Core.dll
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Domain.dll
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Core.pdb
+C:\projects\tvmaze\Services\TvMaze.Services\bin\Debug\netstandard2.0\TvMaze.Domain.pdb
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.csprojAssemblyReference.cache
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.AssemblyInfoInputs.cache
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.AssemblyInfo.cs
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.csproj.CopyComplete
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.dll
+C:\projects\tvmaze\Services\TvMaze.Services\obj\Debug\netstandard2.0\TvMaze.Services.pdb
