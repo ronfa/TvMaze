@@ -41,62 +41,70 @@ namespace TvMaze.Scraper
                     EndPageNum = nextPageNumber+1 };
 
                 await _importRunRepository.AddAsync(run);
-
-                var shows = new List<Show>();
-
-                var keepGoing = true;
                 
                 using (var httpClient = new HttpClient())
                 {
-
-                    while (keepGoing)
-                    {
-
-                        // Wait for 200 ms to not flood the api
-                        await Task.Delay(200, stoppingToken);
-
-                        // Call the next page of shows on tvMaze
-                        using (var response = await httpClient.GetAsync($"http://api.tvmaze.com/shows?page={run.EndPageNum}"))
-                        {
-                            if (!response.IsSuccessStatusCode)
-                            {
-                                // reached the last page
-                                keepGoing = false;
-                                run.EndPageNum--;
-                                break;
-                            }
-
-                            string apiResponse = await response.Content.ReadAsStringAsync();
-                            shows = JsonConvert.DeserializeObject<List<Show>>(apiResponse);
-
-                            foreach (var show in shows)
-                            {
-                                // Save show
-                                await _showRepository.AddAsync(show);
-
-                                var castMembers = new List<CastMember>();
-
-                                // Wait for 200 ms to not flood the api
-                                await Task.Delay(200, stoppingToken);
-
-                                using (var castResponse = await httpClient.GetAsync($"http://api.tvmaze.com/shows/{show.Id}/cast"))
-                                {
-                                    string apiCastResponse = await castResponse.Content.ReadAsStringAsync();
-                                    castMembers = JsonConvert.DeserializeObject<List<CastMember>>(apiCastResponse);
-
-                                    foreach (var member in castMembers)
-                                    {
-                                        await _castMemberRepository.AddAsync(member);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    await GetShows(run, httpClient, stoppingToken);
                 }
 
-            
-
                 await Task.Delay(1000, stoppingToken);
+            }
+        }
+
+        private async Task GetShows(ImportRun run, HttpClient httpClient, CancellationToken stoppingToken)
+        {
+            var keepGoing = true;
+            while (keepGoing)
+            {
+                List<Show> shows;
+
+                // Wait for 200 ms to not flood the api
+                await Task.Delay(200, stoppingToken);
+
+                // Call the next page of shows on tvMaze
+                using (var response = await httpClient.GetAsync($"http://api.tvmaze.com/shows?page={run.EndPageNum}"))
+                {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        // reached the last page
+                        keepGoing = false;
+                        run.EndPageNum--;
+                        break;
+                    }
+
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    shows = JsonConvert.DeserializeObject<List<Show>>(apiResponse);
+
+                    foreach (var show in shows)
+                    {
+                        await ProcessShow(show, httpClient, stoppingToken);
+                    }
+
+                    run.EndPageNum++;
+                }
+            }
+
+        }
+
+        private async Task ProcessShow(Show show, HttpClient httpClient, CancellationToken stoppingToken)
+        {
+            // Save show
+            await _showRepository.AddAsync(show);
+
+            List<CastMember> castMembers;
+
+            // Wait for 200 ms to not flood the api
+            await Task.Delay(200, stoppingToken);
+
+            using (var castResponse = await httpClient.GetAsync($"http://api.tvmaze.com/shows/{show.Id}/cast"))
+            {
+                string apiCastResponse = await castResponse.Content.ReadAsStringAsync();
+                castMembers = JsonConvert.DeserializeObject<List<CastMember>>(apiCastResponse);
+
+                foreach (var member in castMembers)
+                {
+                    await _castMemberRepository.AddAsync(member);
+                }
             }
         }
 
